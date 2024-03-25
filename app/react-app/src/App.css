@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  } 
+}
+
+/* App.cssに新規追加 */
+.sakura {
+  width: 50px; /* 必要に応じて調整 */
+  height: 50px; /* 必要に応じて調整 */
+  position: absolute;
+  left: 50%;
+  animation: fall 10s linear infinite, sway 2s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes fall {
+  0% {
+    top: -50px;
+
+  }
+  100% {
+    top: 110%; /* 画面の下まで降る */
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(100px); /* 左方向への流れの範囲を調整 */
+  }
+}
+
+.centered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* 桜の花びらより前面に表示 */
+  color: black; /* 視認性を高めるための色 */
+  text-align: center;
+}
